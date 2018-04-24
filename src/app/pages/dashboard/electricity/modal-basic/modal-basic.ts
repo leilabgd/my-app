@@ -28,4 +28,5 @@ export class NgbdModalBasic {
       return  `with: ${reason}`;
     }
   }
+  
 }
