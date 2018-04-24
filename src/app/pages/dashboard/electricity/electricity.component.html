@@ -1,0 +1,74 @@
+<nb-card size="medium">
+
+  <div class="table-header">
+    <div class="row">
+      <div class="col-xxl-4 col-md-6" ngbDropdown>
+        <div>AVL</div>
+        <div class="subtitle">Aviva</div>
+      </div>
+      <div class="col-xxl-4 col-md-6" ngbDropdown></div>
+      <div class="col-xxl-4 col-md-6" ngbDropdown>
+
+        <div class="icon-button-examples row justify-content-end" style="margin-right: 5px;">
+          <button type="button" class="btn btn-info btn-demo ">
+            <i class="ion-plus-round"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-3" ngbDropdown style="margin-left: 8px;">
+      <button type="button" ngbDropdownToggle class="btn btn-primary dropdown-toggle" [ngClass]="{ 'btn-outline-success': currentTheme == 'default', 'btn-primary': currentTheme != 'default'}">
+        {{ day }}
+      </button>
+      <ul class="dropdown-menu" ngbDropdownMenu>
+        <li class="dropdown-item" *ngFor="let d of days" (click)="day = d">{{ d }}</li>
+      </ul>
+    </div>
+    <div class="col-lg-3" ngbDropdown>
+      <button type="button" ngbDropdownToggle class="btn btn-primary dropdown-toggle" [ngClass]="{ 'btn-outline-success': currentTheme == 'default', 'btn-primary': currentTheme != 'default'}">
+        {{ month }}
+      </button>
+      <ul class="dropdown-menu" ngbDropdownMenu>
+        <li class="dropdown-item" *ngFor="let m of months" (click)="month = m">{{ m }}</li>
+      </ul>
+    </div>
+    <div class="col-lg-3" ngbDropdown>
+      <button type="button" ngbDropdownToggle class="btn btn-primary dropdown-toggle" [ngClass]="{ 'btn-outline-success': currentTheme == 'default', 'btn-primary': currentTheme != 'default'}">
+        {{ year }}
+      </button>
+      <ul class="dropdown-menu" ngbDropdownMenu>
+        <li class="dropdown-item" *ngFor="let y of years" (click)="year = y">{{ y }}</li>
+      </ul>
+    </div>
+  </div>
+  <nb-tabset fullWidth>
+    <nb-tab *ngFor="let year of data" [tabTitle]="year.title" [active]="year.active">
+      <div class="stats-month" *ngFor="let day of year.days">
+        <div>
+          <span class="month">{{ day.day }}</span>
+          <span class="delta" [ngClass]="{ 'down': day.down }">{{ day.delta }}</span>
+        </div>
+        <div class="results">
+          <b>{{ day.cost }}</b> USD
+        </div>
+      </div>
+    </nb-tab>
+  </nb-tabset>
+  <ngx-electricity-chart></ngx-electricity-chart>
+  <div class="row">
+    <div class="col-xxl-4 col-md-6">
+        <ngbd-modal-basic></ngbd-modal-basic>
+     
+    </div>
+    <div class="col-xxl-4 col-md-6"></div>
+    <div class="col-xxl-4 col-md-6">
+        <ngbd-modal-buy></ngbd-modal-buy>
+    </div>
+  </div>
+ 
+</nb-card>
+
+
