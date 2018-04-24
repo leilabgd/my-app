@@ -15,8 +15,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Wishlist',
     icon: 'nb-star',
-    link: '/pages/dashboard',
-    home: true,
+    link: '/pages/wishlist',
   },
   {
     title: 'FEATURES',

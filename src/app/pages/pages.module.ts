@@ -4,6 +4,7 @@ import { PagesComponent } from './pages.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { ThemeModule } from '../@theme/theme.module';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 
 const PAGES_COMPONENTS = [
@@ -15,10 +16,11 @@ const PAGES_COMPONENTS = [
     PagesRoutingModule,
     ThemeModule,
     DashboardModule,
-  
+    
   ],
   declarations: [
     ...PAGES_COMPONENTS,
+    WishlistComponent,
 
   ],
 })
