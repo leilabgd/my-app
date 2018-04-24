@@ -13,8 +13,8 @@ import { SmartTableService } from '../../../@core/data/smart-table.service';
   `],
 })
 export class SmartTableComponent {
-
   settings = {
+    actions : false,
     add: {
       addButtonContent: '<i class="nb-plus"></i>',
       createButtonContent: '<i class="nb-checkmark"></i>',
@@ -30,30 +30,23 @@ export class SmartTableComponent {
       confirmDelete: true,
     },
     columns: {
-      id: {
-        title: 'ID',
+      Market: {
+        title: 'Market',
+        type: 'string',
+      },
+      Units: {
+        title: 'Units',
         type: 'number',
       },
-      firstName: {
-        title: 'First Name',
+      Invested: {
+        title: 'Invested',
         type: 'string',
       },
-      lastName: {
-        title: 'Last Name',
-        type: 'string',
+      Date: {
+        title: 'Date',
+        type: 'date',
       },
-      username: {
-        title: 'Username',
-        type: 'string',
-      },
-      email: {
-        title: 'E-mail',
-        type: 'string',
-      },
-      age: {
-        title: 'Age',
-        type: 'number',
-      },
+     
     },
   };
 

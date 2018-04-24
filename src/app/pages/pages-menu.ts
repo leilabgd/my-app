@@ -10,7 +10,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Portfolio',
     icon: 'nb-person',
-    link: '/pages/forms/layouts',
+    link: '/pages/tables/smart-table',
   },
   {
     title: 'Wishlist',
